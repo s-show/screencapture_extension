@@ -1,0 +1,34 @@
+{
+  "name": "screencapture_extension",
+  "version": "1.0.0",
+  "description": "A Chrome extension built with TypeScript and SCSS.",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:ts": "tsc",
+    "watch:ts": "tsc --watch --preserveWatchOutput",
+    "build:scss": "sass src/scss:dist/css --style compressed",
+    "watch:scss": "sass --watch src/scss:dist/css",
+    "copy:html": "cpx \"src/html/**/*.html\" dist",
+    "watch:html": "nodemon --watch src/html -e html --exec \"npm run copy:html\"",
+    "copy:images": "cpx \"src/images/**/*\" dist/images",
+    "watch:images": "nodemon --watch src/images --exec \"npm run copy:images\"",
+    "copy:manifest": "cpx manifest.json dist",
+    "watch:manifest": "nodemon --watch manifest.json --exec \"npm run copy:manifest\"",
+    "prebuild": "npm run clean",
+    "build": "npm run build:ts && npm run build:scss && npm run copy:html && npm run copy:images && npm run copy:manifest",
+    "watch": "concurrently \"npm:watch:*\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0",
+  "devDependencies": {
+    "@types/chrome": "^0.0.326",
+    "concurrently": "^9.1.2",
+    "cpx": "^1.5.0",
+    "nodemon": "^3.1.10",
+    "sass": "^1.89.1",
+    "typescript": "^5.8.3"
+  }
+}

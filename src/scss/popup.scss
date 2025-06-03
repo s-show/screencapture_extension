@@ -1,0 +1,30 @@
+body {
+  width: 200px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+#messageArea {
+  min-height: 1.2em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

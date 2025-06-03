@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>スクリーンショット設定</title>
+  <link rel="stylesheet" href="css/options.css">
+</head>
+<body>
+  <h2>設定</h2>
+  <div>
+    <label for="defaultCaptureMode">起動時のデフォルト撮影方法:</label>
+    <select id="defaultCaptureMode">
+      <option value="ask">毎回選択</option>
+      <option value="visible">表示範囲を撮影</option>
+      <option value="fullPage">ページ全体を撮影</option>
+    </select>
+  </div>
+  <div>
+    <label for="saveSubfolder">保存先サブフォルダ名 (Chromeのダウンロードフォルダ内):</label>
+    <input type="text" id="saveSubfolder" placeholder="例: MyScreenshots (空欄可)">
+    <p class="note">
+      注意: Chrome拡張機能の制約上、OSの特定のフォルダ（例：ピクチャフォルダ）へ直接保存することはできません。
+      ここで指定したサブフォルダ名がChromeのダウンロードフォルダ内に作成され、そこに保存されます。
+      空欄の場合はダウンロードフォルダ直下に保存されます。
+    </p>
+  </div>
+  <button id="saveOptions">設定を保存</button>
+  <div id="status"></div>
+  <script src="js/options.js"></script>
+</body>
+</html>
