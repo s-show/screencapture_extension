@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>スクリーンショット設定</title>
   <link rel="stylesheet" href="css/options.css">
 </head>
+
 <body>
   <h2>設定</h2>
   <div>
@@ -24,8 +26,20 @@
       空欄の場合はダウンロードフォルダ直下に保存されます。
     </p>
   </div>
+  <div>
+    <label>ページ全体撮影の保存方法:</label>
+    <div>
+      <input type="radio" id="fullPageModeStitch" name="fullPageMode" value="stitch" checked>
+      <label for="fullPageModeStitch">結合して1枚の画像として保存 (デフォルト)</label>
+    </div>
+    <div>
+      <input type="radio" id="fullPageModeSegments" name="fullPageMode" value="segments">
+      <label for="fullPageModeSegments">個別の画像 (セグメント) としてそれぞれ保存</label>
+    </div>
+  </div>
   <button id="saveOptions">設定を保存</button>
   <div id="status"></div>
   <script src="js/options.js"></script>
 </body>
+
 </html>
